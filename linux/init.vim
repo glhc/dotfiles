@@ -12,7 +12,12 @@ set tabstop=8
 " ### vim-plug
 
 " Download and install vim-plug
-
+"
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
 
 " Install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
@@ -33,10 +38,11 @@ call plug#end()
 
 " ## Color
 
-syntax enable
-set background=dark
-colorscheme solarized
-
+if !has('win32') 
+  syntax enable
+  set background=dark
+  colorscheme solarized
+end
 
 " ## Statusline
 
