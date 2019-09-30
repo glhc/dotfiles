@@ -67,10 +67,11 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+h split \
+bindsym $mod+h split |
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split -
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -192,3 +193,4 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Set background on x to a color
 exec --no-startup-id hsetroot -solid "#d33682"
+
