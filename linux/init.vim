@@ -1,5 +1,7 @@
 " # Vim Configuration File
 
+:scriptencoding utf-8
+
 " ## Automatic Installation of vim-plug
 
 set expandtab
@@ -12,7 +14,6 @@ set tabstop=8
 " ### vim-plug
 
 " Download and install vim-plug
-"
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -22,28 +23,45 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 " Install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
 
-  Plug 'itchyny/lightline.vim'
   Plug 'altercation/vim-colors-solarized'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-sensible'
+  Plug 'itchyny/lightline.vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'metakirby5/codi.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'neoclide/coc-json' {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-dadbod'
+  Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  Plug 'yggdroot/indentline'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
-  Plug 'metakirby5/codi.vim'
   Plug 'scrooloose/nerdtree'
+  Plug 'yggdroot/indentline'
   
 call plug#end()
+
+
+" ### IndentLine
+
+" Override default hiding of quotes in JSON, etc.
+let g:indentLine_setConceal = 0
+
+" Override conceal colour set to grey.
+let g:indentLine_setColors = 0
+
+" Change indent character to a better one.
+" Left one eigth block is not supported by consolas, stored here for future
+" use: '▏'
+" Use left half block for now.
+let g:indentLine_char = '▌'
 
 " ## Color
 
@@ -55,6 +73,7 @@ end
 
 " ## Statusline
 
+" Add Coc to statusline
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
@@ -120,9 +139,6 @@ set updatetime=300
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
