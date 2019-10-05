@@ -1,7 +1,8 @@
 # .bashrc
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+
+# Make tab-completion case-insensitive
+set completion-ignore-case on
 
 # User specific aliases and functions
 
