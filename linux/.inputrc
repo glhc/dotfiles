@@ -1,0 +1,11 @@
+set bell-style none
+set colored-completion-prefix on
+set colored-stats on
+set completion ignore-case on
+set editing-mode vi
+set visible stats on
+
+
+"\e[1;5C": forward-word   # ctrl + right
+"\e[1;5D": backward-word  # ctrl + left 
+"\C-H":"\C-W" # Ctrl + Backspace deletes word

@@ -18,7 +18,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
       autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    endif
+endif
 
 " Install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
@@ -29,14 +29,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'metakirby5/codi.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-dadbod'
+  Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-rails'
@@ -48,20 +43,23 @@ call plug#begin('~/.vim/plugged')
   
 call plug#end()
 
+" Install Coc.nvim extensions
+call coc#add_extension('coc-json', 'coc-tsserver', 'coc-html', 'coc-eslint', 'coc-css', 'coc-solargraph', 'coc-gitignore', 'coc-python', 'coc-snippets')
 
 " ### IndentLine
 
 " Override default hiding of quotes in JSON, etc.
-let g:indentLine_setConceal = 0
+" let g:indentLine_setConceal = 0
 
 " Override conceal colour set to grey.
-let g:indentLine_setColors = 0
+" let g:indentLine_setColors = 0
 
 " Change indent character to a better one.
 " Left one eigth block is not supported by consolas, stored here for future
 " use: '▏'
 " Use left half block for now.
-let g:indentLine_char = '▌'
+" let g:indentLine_char = '▌'
+let g:indentLine_char = '▏'
 
 " ## Color
 
@@ -91,6 +89,9 @@ let g:lightline = {
       \ }
 
 " ## Syntax, Formatting, Keybindings:
+
+" Address the delay on escape waiting for 1 second before entering Normal mode
+set timeout timeoutlen=0 ttimeoutlen=0
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
