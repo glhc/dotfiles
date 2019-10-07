@@ -7,8 +7,8 @@ set visible-stats on
 
 "TAB": menu-complete
 "\e[Z": menu-complete-backward
-"\e[1;5C": forward-word   # ctrl + right
-"\e[1;5D": backward-word  # ctrl + left 
+"\e[C": forward-word   # ctrl + right
+"\e[D": backward-word  # ctrl + left 
 "\C-H":"\C-W" # Ctrl + Backspace deletes word
 
 
