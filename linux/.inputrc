@@ -1,9 +1,9 @@
 set bell-style none
 set colored-completion-prefix on
 set colored-stats on
-set completion ignore-case on
+set completion-ignore-case on
 set editing-mode vi
-set visible stats on
+set visible-stats on
 
 
 "\e[1;5C": forward-word   # ctrl + right
