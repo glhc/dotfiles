@@ -3,6 +3,10 @@
 :scriptencoding utf-8
 set encoding=UTF-8
 
+set termguicolors
+let g:solarized_termcolors=16
+
+
 " ## Automatic Installation of vim-plug
 
 set expandtab
@@ -63,11 +67,9 @@ let g:indentLine_char = '▏'
 
 " ## Color
 
-if !has('win32') 
-  syntax enable
-  set background=dark
-  colorscheme solarized
-end
+syntax enable
+set background=dark
+colorscheme solarized
 
 " ## Statusline
 
@@ -142,9 +144,6 @@ set hidden
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
-" Better display for messages
-set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
