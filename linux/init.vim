@@ -1,6 +1,7 @@
 " # Vim Configuration File
 
 :scriptencoding utf-8
+set encoding=UTF-8
 
 " ## Automatic Installation of vim-plug
 
@@ -29,6 +30,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'metakirby5/codi.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'pangloss/vim-javascript'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-dadbod'
   Plug 'tpope/vim-endwise'
@@ -38,15 +42,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
-  Plug 'scrooloose/nerdtree'
   Plug 'yggdroot/indentline'
   
 call plug#end()
 
-" Install Coc.nvim extensions
-call coc#add_extension('coc-json', 'coc-tsserver', 'coc-html', 'coc-eslint', 'coc-css', 'coc-solargraph', 'coc-gitignore', 'coc-python', 'coc-snippets')
-
-" ### IndentLine
+" ## IndentLine
 
 " Override default hiding of quotes in JSON, etc.
 " let g:indentLine_setConceal = 0
@@ -108,7 +108,20 @@ set colorcolumn=80
 set number
 set relativenumber
 
-" ## Coc.vim
+" ### vim-javascript
+"
+let g:javascript_plugin_jsdoc = 1
+
+
+
+" ## Coc.nvim
+
+" Install Coc.nvim extensions
+call coc#add_extension('coc-css', 'coc-eslint', 'coc-gitignore', 'coc-highlight', 'coc-html', 'coc-json', 'coc-lists', 'coc-python', 'coc-solargraph', 'coc-snippets', 'coc-tsserver')
+
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -123,8 +136,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-
-" # CoC.vim configuration section
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -147,12 +158,14 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+"enable Shift + TAB to cycle backwards"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -160,6 +173,4 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
+inoremap <silent><expr> <F2> CocCurrentFunction('jumpDefinition')
