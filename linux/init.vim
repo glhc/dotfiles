@@ -3,7 +3,6 @@
 :scriptencoding utf-8
 set encoding=UTF-8
 
-set termguicolors
 let g:solarized_termcolors=16
 
 
