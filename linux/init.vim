@@ -113,8 +113,6 @@ set relativenumber
 "
 let g:javascript_plugin_jsdoc = 1
 
-
-
 " ## Coc.nvim
 
 " Install Coc.nvim extensions
@@ -141,9 +139,8 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to format on enter
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
+"	inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " if hidden is not set, TextEdit might fail.
 set hidden

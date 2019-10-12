@@ -30,5 +30,6 @@
     },
   "diagnostic.errorSign": "",
   "diagnostic.infoSign": "",
-  "diagnostic.hintSign": ""
+  "diagnostic.hintSign": "",
+  "coc.preferences.formatOnType": true
 }
