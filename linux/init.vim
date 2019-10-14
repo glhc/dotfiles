@@ -89,35 +89,35 @@ let g:lightline = {
       \ },
       \ }
 
+" Use autocmd to force lightline update upon Coc diagnostics.
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
 " ## Syntax, Formatting, Keybindings:
 
 " Address the delay on escape waiting for 1 second before entering Normal mode
-set timeout timeoutlen=0 ttimeoutlen=0
+set timeout
+set timeoutlen=1000
+set ttimeoutlen=0
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-
+" Set margin at 80 characters
 set colorcolumn=80
+
+" Set line-number column
 set number
+
+" Set line-numbering relative to current line
 set relativenumber
 
+" Make diagnostic gutter consistent with theme color instead of default grey.
+highlight clear SignColumn
+
 " ### vim-javascript
-"
 let g:javascript_plugin_jsdoc = 1
 
 " ## Coc.nvim
 
 " Install Coc.nvim extensions
-call coc#add_extension('coc-css', 'coc-eslint', 'coc-gitignore', 'coc-highlight', 'coc-html', 'coc-json', 'coc-lists', 'coc-python', 'coc-solargraph', 'coc-snippets', 'coc-tsserver')
-
+call coc#add_extension('coc-css', 'coc-eslint', 'coc-gitignore', 'coc-highlight', 'coc-html', 'coc-json', 'coc-lists', 'coc-python', 'coc-solargraph', 'coc-snippets', 'coc-tsserver', 'coc-sql')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
@@ -138,9 +138,6 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to format on enter
-"	inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-"				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -155,25 +152,19 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-"enable Shift + TAB to cycle backwards"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Jump to definition
 inoremap <silent><expr> <F2> CocCurrentFunction('jumpDefinition')
+
+" Bind Ctrl + e to NERDTree toggle
+nnoremap <C-n> :NERDTreeToggle<CR>
+inoremap <C-n> <C-\><C-O>:NERDTreeToggle<CR>
+
+" Include .erb support for vim-surround
+autocmd FileType erb let b:surround_{char2nr('=')} = "<%= \r %>"
+autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
