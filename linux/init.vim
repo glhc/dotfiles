@@ -168,3 +168,10 @@ inoremap <C-n> <C-\><C-O>:NERDTreeToggle<CR>
 " Include .erb support for vim-surround
 autocmd FileType erb let b:surround_{char2nr('=')} = "<%= \r %>"
 autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
+
+" Work in progress
+" inoremap <F8><Plug>(coc-diagnostic-next)
+" inoremap <S-F8> <Plug>(coc-diagnostic-prev) <-- this won't work.. shift
+" doesn't go on escape chars in terminals?
+" inoremap <F2> <Plug>(coc-rename)
+" inoremap <Plug>(coc-format)
