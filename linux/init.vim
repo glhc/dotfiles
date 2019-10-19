@@ -18,10 +18,10 @@ set tabstop=8
 " ### vim-plug
 
 " Download and install vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Install plugins with vim-plug
@@ -46,7 +46,21 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
   Plug 'yggdroot/indentline'
-  
+  Plug 'neoclide/coc-tsserver'
+  Plug 'neoclide/coc-solargraph'
+  Plug 'neoclide/coc-eslint'
+  Plug 'neoclide/coc-lists'
+  Plug 'neoclide/coc-snippets'
+  Plug 'neoclide/coc-html'
+  Plug 'neoclide/coc-css'
+  Plug 'neoclide/coc-highlight'
+  Plug 'neoclide/coc-sql'
+  Plug 'neoclide/coc-json'
+  Plug 'neoclide/coc-git'
+  Plug 'neoclide/coc-python'
+  Plug 'neoclide/coc-tabnine'
+  Plug 'neoclide/coc-yaml'
+  Plug 'neoclide/coc-jest'
 call plug#end()
 
 " ## IndentLine
@@ -117,7 +131,6 @@ let g:javascript_plugin_jsdoc = 1
 " ## Coc.nvim
 
 " Install Coc.nvim extensions
-call coc#add_extension('coc-css', 'coc-eslint', 'coc-gitignore', 'coc-highlight', 'coc-html', 'coc-json', 'coc-lists', 'coc-python', 'coc-solargraph', 'coc-snippets', 'coc-tsserver', 'coc-sql')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
