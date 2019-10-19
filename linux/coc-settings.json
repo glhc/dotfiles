@@ -31,5 +31,10 @@
   "diagnostic.errorSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "",
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "solargraph.completion": true,
+  "solargraph.hover": true,
+  "solargraph.formatting": true,
+  "solargraph.references": true,
+  "solargraph.diagnostics": true
 }
