@@ -110,7 +110,7 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " Address the delay on escape waiting for 1 second before entering Normal mode
 set timeout
-set timeoutlen=1000
+set timeoutlen=800
 set ttimeoutlen=0
 
 " Set margin at 80 characters
