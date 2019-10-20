@@ -36,5 +36,8 @@
   "solargraph.hover": true,
   "solargraph.formatting": true,
   "solargraph.references": true,
-  "solargraph.diagnostics": true
+  "solargraph.diagnostics": true,
+  "git.addedSign.text": "\uf457",
+  "git.changedSign.text": "\uf459",
+  "git.removedSign.text": "\uf458"
 }
