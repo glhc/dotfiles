@@ -7,9 +7,6 @@ fi
 # Aliases
 alias ls="ls -lhA --color"
 
-# Make rbenv work
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # Start tmux on every shell login.
 if [[ $DISPLAY ]]; then
@@ -28,7 +25,11 @@ if which tmux >/dev/null 2>&1; then
     done
 fi
 
-if [ -d ~/.rbenv]
+# If rbenv is installed
+if [ -d ~/.rbenv ]
 then
+  # add rbenv to PATH variable
   export PATH="$HOME/.rbenv/bin:$PATH"
+  # Load rbenv automatically
+  eval "$(rbenv init -)" 
 fi
