@@ -3,14 +3,14 @@
 ######## Building section for symlinks
 
 # tmux config symlink
-ln -sf $(realpath ../.tmux.conf) ~/.tmux.conf
+ln -sf $(realpath ../tmux/.tmux.conf) ~/.tmux.conf
 
 
 # .bashrc symlink
-ln -sf $(realpath ../.bashrc) ~/.bashrc
+ln -sf $(realpath ../bash/.bashrc) ~/.bashrc
 
 # .inputrc symlink
-ln -sf $(realpath ../.inputrc) ~/.inputrc
+ln -sf $(realpath ../bash/.inputrc) ~/.inputrc
 
 # Set up push to ~/.config/neovim
 if [ ! -d ~/.config/nvim ]
