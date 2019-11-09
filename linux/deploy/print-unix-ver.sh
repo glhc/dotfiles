@@ -31,8 +31,6 @@ else
     VER=$(uname -r)
 fi
 
-echo "OS: $OS
-echo "VER: $VER
-
-
+echo OS: $OS
+echo VER: $VER
 
