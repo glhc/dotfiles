@@ -231,9 +231,9 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" Use <C-a> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-a> <Plug>(coc-range-select)
-xmap <silent> <C-a> <Plug>(coc-range-select)
+" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <C-d> <Plug>(coc-range-select)
+xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -276,24 +276,23 @@ inoremap <silent><expr> <F12> CocCurrentFunction('jumpDefinition')
 
 " Work in progress
 " Bind F8/Shift + F8 to browsing diagnostic messages
-inoremap <F8><Plug>(coc-diagnostic-next)
-inoremap <S-F8> <Plug>(coc-diagnostic-prev)
-
-
+" inoremap <F8><Plug>(coc-diagnostic-next)
+" inoremap <S-F8> <Plug>(coc-diagnostic-prev)
+"
+"
 " Bind F2 to Rename Symbol
-inoremap <F2> <Plug>(coc-rename)
-
+" inoremap <F2> <Plug>(coc-rename)
+"
 " Bind format document to Ctrl + Alt + f
 " inoremap <Plug>(coc-format)
 " (Optional): Create binding for formatting selection
-
+"
 " Bind Ctrl + e to NERDTree toggle
 nnoremap <C-n> <Cmd>NERDTreeToggle<CR>
 inoremap <C-n> <Cmd>NERDTreeToggle<CR>
-
 " Bind jk and kj to entering normal mode
 :inoremap jk <Esc>
-:inoremap kj <Esc>
+" inoremap kj
 
 " Include .erb support for vim-surround
 autocmd FileType erb let b:surround_{char2nr('=')} = "<%= \r %>"
