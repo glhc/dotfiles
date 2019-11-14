@@ -292,7 +292,7 @@ nnoremap <C-n> <Cmd>NERDTreeToggle<CR>
 inoremap <C-n> <Cmd>NERDTreeToggle<CR>
 " Bind jk and kj to entering normal mode
 :inoremap jk <Esc>
-" inoremap kj
+:inoremap kj <Esc>
 
 " Include .erb support for vim-surround
 autocmd FileType erb let b:surround_{char2nr('=')} = "<%= \r %>"

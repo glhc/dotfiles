@@ -1,0 +1,30 @@
+
+# Colored completion prefix
+set colored-completion-prefix on
+
+# Displays possible completions with color.
+set colored-stats on
+
+# Case-insensitive completion
+set completion-ignore-case on
+
+# Place a trailing '/' when completing the name of a directory
+set mark-directories on
+
+# PowerShell-style completion
+set menu-complete-display-prefix on
+
+
+# set vi on the cmdline
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string on
+
+
+# Off by default
+set expand-tilde off
+
+#### Keybindings ####
+
+Control-Rubout: backword-kill-word
+
