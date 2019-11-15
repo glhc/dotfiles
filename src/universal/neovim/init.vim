@@ -44,7 +44,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-markdown'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
   Plug 'yggdroot/indentline'
   
@@ -122,6 +121,7 @@ call coc#add_extension(
       \ 'coc-tsserver',
       \ 'coc-highlight',
       \ 'coc-eslint',
+      \ 'coc-prettier',
       \ 'coc-solargraph',
       \ 'coc-lists',
       \ 'coc-snippets',
@@ -177,12 +177,15 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use `[g` and `]g` to navigate diagnostics
+" navigate diagnostics
+nmap <F8> <Plug>(coc-diagnostic-next)
+nmap <S-F8> <Plug>(coc-diagnostic-prev)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <F12> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -201,8 +204,10 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
+" Rename symbol
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <F2> <Plug>(coc-rename)
+inoremap <F2> <C-O><Plug>(coc-rename)
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
@@ -231,9 +236,12 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+" Use <C-l> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <C-l> <Plug>(coc-range-select)
+xmap <silent> <C-l> <Plug>(coc-range-select)
+" The below lines are overriding <C-l> above currently. Need to investigate.
+" nmap <silent> <S-C-l> <Plug>(coc-range-select-backward)
+" xmap <silent> <S-C-l> <Plug>(coc-range-select-backward)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -247,9 +255,11 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Using CocList
+" ### Using CocList ###
+
 " OpenCocList
-nnoremap <silent> <space>l  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>l  :<C-u>CocList<cr>
+nnoremap <silent> <C-p>  :<C-u>CocList<cr>
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
@@ -260,6 +270,7 @@ nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <C-t>  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
@@ -267,21 +278,13 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" Jump to definition
-inoremap <silent><expr> <F12> CocCurrentFunction('jumpDefinition')
-" Use <C-O> to return to code position after jumping to definition
 
 
 " ############ END CoC.nvim ##############
 
 " Work in progress
-" Bind F8/Shift + F8 to browsing diagnostic messages
-" inoremap <F8><Plug>(coc-diagnostic-next)
-" inoremap <S-F8> <Plug>(coc-diagnostic-prev)
 "
 "
-" Bind F2 to Rename Symbol
-" inoremap <F2> <Plug>(coc-rename)
 "
 " Bind format document to Ctrl + Alt + f
 " inoremap <Plug>(coc-format)
@@ -290,6 +293,7 @@ inoremap <silent><expr> <F12> CocCurrentFunction('jumpDefinition')
 " Bind Ctrl + e to NERDTree toggle
 nnoremap <C-n> <Cmd>NERDTreeToggle<CR>
 inoremap <C-n> <Cmd>NERDTreeToggle<CR>
+
 " Bind jk and kj to entering normal mode
 :inoremap jk <Esc>
 :inoremap kj <Esc>
