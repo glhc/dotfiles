@@ -10,9 +10,6 @@ set completion-ignore-case on
 # Place a trailing '/' when completing the name of a directory
 set mark-directories on
 
-# PowerShell-style completion
-set menu-complete-display-prefix on
-
 # Set vi on the cmdline
 set editing-mode vi
 set show-mode-in-prompt on
@@ -32,6 +29,7 @@ set print-completions-horizontally on
 #### Keybindings ####
 
 "\C-h": backward-kill-word
+Control-del: kill-word
 Tab: menu-complete
 #Shift-Tab
 "\e[Z": menu-complete-backward
