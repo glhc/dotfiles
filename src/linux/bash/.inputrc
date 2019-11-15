@@ -27,7 +27,7 @@ set bell-style visible
 
 # Disable paged auto-completion options
 set page-completions on
-set page-completions-horizontally on
+set print-completions-horizontally on
 
 #### Keybindings ####
 

@@ -43,3 +43,7 @@ then
   # Load rbenv automatically
   eval "$(rbenv init -)" 
 fi
+
+# Specify vim as default editor for programs
+export VISUAL=vim
+export EDITOR="$VISUAL"
