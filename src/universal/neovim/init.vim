@@ -305,3 +305,7 @@ autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
 " Ideas:
 " Ctrl + Shift + M - Go to CocList Diagnostics
 " (Optional): Ctrl + Tab and Ctrl + Shift + Tab for switching buffers
+"
+"change popup menu highlighting to work better (highlight group 'PMenu')
+"e.g.
+"highlight Pmenu
