@@ -34,7 +34,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'metakirby5/codi.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'pangloss/vim-javascript'
+  " Plug 'pangloss/vim-javascript'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
@@ -297,6 +297,8 @@ inoremap <C-n> <Cmd>NERDTreeToggle<CR>
 " Bind jk and kj to entering normal mode
 :inoremap jk <Esc>
 :inoremap kj <Esc>
+:inoremap JK <Esc>
+:inoremap KJ <Esc>
 
 " Include .erb support for vim-surround
 autocmd FileType erb let b:surround_{char2nr('=')} = "<%= \r %>"
