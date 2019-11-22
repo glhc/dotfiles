@@ -119,6 +119,7 @@ let g:javascript_plugin_jsdoc = 1
 " ## CoC extensions
 call coc#add_extension(
       \ 'coc-tsserver',
+      \ 'coc-tabnine',
       \ 'coc-highlight',
       \ 'coc-eslint',
       \ 'coc-prettier',
@@ -130,12 +131,13 @@ call coc#add_extension(
       \ 'coc-highlight',
       \ 'coc-sql',
       \ 'coc-json',
-      \ 'coc-git',
       \ 'coc-python',
-      \ 'coc-tabnine',
       \ 'coc-yaml',
       \ 'coc-jest'
       \ )
+
+" Taking out because of performance issues
+      " \ 'coc-git',
 
 " if hidden is not set, TextEdit might fail.
 set hidden
