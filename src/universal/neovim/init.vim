@@ -3,7 +3,12 @@
 :scriptencoding utf-8
 set encoding=UTF-8
 
-let g:solarized_termcolors=16
+" Doesn't work atm
+if has("termguicolors")
+set termguicolors
+endif
+
+" let g:solarized_termcolors=16
 
 
 " ## Automatic Installation of vim-plug
@@ -28,6 +33,7 @@ endif
 " Install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
 
+  Plug 'lifepillar/vim-solarized8'
   Plug 'altercation/vim-colors-solarized'
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -46,6 +52,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'yggdroot/indentline'
+
   
 call plug#end()
 
@@ -68,7 +75,7 @@ let g:indentLine_char = '▏'
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme solarized8
 
 " ## Statusline
 
@@ -129,7 +136,6 @@ call coc#add_extension(
       \ 'coc-html',
       \ 'coc-css',
       \ 'coc-highlight',
-      \ 'coc-sql',
       \ 'coc-json',
       \ 'coc-python',
       \ 'coc-yaml',
@@ -138,6 +144,7 @@ call coc#add_extension(
 
 " Taking out because of performance issues
       " \ 'coc-git',
+      " \ 'coc-sql',
 
 " if hidden is not set, TextEdit might fail.
 set hidden

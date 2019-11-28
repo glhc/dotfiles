@@ -13,8 +13,11 @@ set mark-directories on
 # Set vi on the cmdline
 set editing-mode vi
 set show-mode-in-prompt on
-set vi-ins-mode-string  |
-set vi-cmd-mode-string 輦|
+set vi-ins-mode-string  " "
+set vi-cmd-mode-string  " "
+
+# alternatives:
+# insert:  , , , , , , ,, , , , ,
 
 # Off by default
 set expand-tilde off

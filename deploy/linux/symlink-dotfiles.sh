@@ -30,3 +30,5 @@ ln -sf $(realpath ../../src/universal/neovim/coc-settings.json) ~/.config/nvim/c
 # symlink dircolors-solarized to ~/.dircolors
 ln -sf $(realpath ../../src/linux/bash/dircolors-solarized.ansi-dark) ~/.dir_colors
 
+# symlink git config
+ln -sf $(realpath ../../src/universal/git/.gitconfig) ~/.gitconfig
