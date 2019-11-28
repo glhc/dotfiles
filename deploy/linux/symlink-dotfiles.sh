@@ -28,5 +28,5 @@ ln -sf $(realpath ../../src/universal/neovim/init.vim) ~/.config/nvim/init.vim
 ln -sf $(realpath ../../src/universal/neovim/coc-settings.json) ~/.config/nvim/coc-settings.json
 
 # symlink dircolors-solarized to ~/.dircolors
- ln -sf $(realpath ../../src/linux/bash/dircolors-solarized.ansi-dark) ~/.dir_colors
+ln -sf $(realpath ../../src/linux/bash/dircolors-solarized.ansi-dark) ~/.dir_colors
 
