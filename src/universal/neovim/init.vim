@@ -3,9 +3,9 @@
 :scriptencoding utf-8
 set encoding=UTF-8
 
-" Doesn't work atm
+" Enable truecolor in nvim
 if has("termguicolors")
-set termguicolors
+  set termguicolors
 endif
 
 " let g:solarized_termcolors=16
@@ -35,6 +35,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'lifepillar/vim-solarized8'
   Plug 'altercation/vim-colors-solarized'
+  Plug 'honza/vim-snippets'
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -287,21 +288,32 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" ### CoC.nvim Config End ###
 
-
-" ############ END CoC.nvim ##############
-
-" Work in progress
-"
-"
-"
 " Bind format document to Ctrl + Alt + f
 " inoremap <Plug>(coc-format)
 " (Optional): Create binding for formatting selection
-"
+
+" ### NERDtree Config ###
+
 " Bind Ctrl + e to NERDTree toggle
 nnoremap <C-n> <Cmd>NERDTreeToggle<CR>
 inoremap <C-n> <Cmd>NERDTreeToggle<CR>
+
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Make sure vim does not open files and other buffers on NerdTree window
+" If more than one window and previous buffer was NERDTree, go back to it.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
+" Directory symbols
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" ### NERDtree Config End ###
+
+
 
 " Bind jk and kj to entering normal mode
 :inoremap jk <Esc>
