@@ -17,7 +17,7 @@ set vi-ins-mode-string  " "
 set vi-cmd-mode-string  " "
 
 # alternatives:
-# insert:  , , , , , , ,, , , , ,
+# insert:  , , , , , , ,, , , , , ,
 
 # Off by default
 set expand-tilde off

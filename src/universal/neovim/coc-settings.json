@@ -1,6 +1,6 @@
 {
   "suggest.enablePreview": true,
-  "suggest.snippetIndicator": " ﲖ",
+  "suggest.snippetIndicator":  "ﲖ",
   "suggest.completionItemKindLabels": {
 	"keyword": "\uf1de",
 	"variable": "\ue79b",

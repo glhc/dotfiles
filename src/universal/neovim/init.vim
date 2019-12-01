@@ -33,6 +33,7 @@ endif
 " Install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
 
+  Plug 'andys8/vscode-jest-snippets'
   Plug 'lifepillar/vim-solarized8'
   Plug 'altercation/vim-colors-solarized'
   Plug 'honza/vim-snippets'
