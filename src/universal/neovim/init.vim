@@ -140,6 +140,7 @@ call coc#add_extension(
       \ 'coc-highlight',
       \ 'coc-json',
       \ 'coc-python',
+      \ 'coc-rls',
       \ 'coc-yaml',
       \ 'coc-jest'
       \ )
