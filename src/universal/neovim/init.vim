@@ -34,7 +34,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
   Plug 'andys8/vscode-jest-snippets'
-  Plug 'chemzqm/vim-jsx-improved'
+  Plug 'chemzqm/vim-jsx-improve'
   Plug 'lifepillar/vim-solarized8'
   Plug 'altercation/vim-colors-solarized'
   Plug 'honza/vim-snippets'
