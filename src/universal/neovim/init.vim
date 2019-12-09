@@ -34,6 +34,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
   Plug 'andys8/vscode-jest-snippets'
+  Plug 'chemzqm/vim-jsx-improved'
   Plug 'lifepillar/vim-solarized8'
   Plug 'altercation/vim-colors-solarized'
   Plug 'honza/vim-snippets'
@@ -150,6 +151,7 @@ call coc#add_extension(
       " \ 'coc-sql',
 
 " if hidden is not set, TextEdit might fail.
+" Allow for switching buffers
 set hidden
 
 " Some servers have issues with backup files, see #649
