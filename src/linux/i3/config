@@ -193,3 +193,6 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Set background on x to a color
 exec --no-startup-id hsetroot -solid "#d33682"
+
+# hide edge borders
+hide_edge_borders both
