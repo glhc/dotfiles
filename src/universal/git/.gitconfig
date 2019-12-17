@@ -4,4 +4,4 @@
   username = glhc
 
 [core]
-    editor = vim
+    editor = nvim
