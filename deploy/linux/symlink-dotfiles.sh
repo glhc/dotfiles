@@ -32,3 +32,11 @@ ln -sf $(realpath ../../src/linux/bash/dircolors-solarized.ansi-dark) ~/.dir_col
 
 # symlink git config
 ln -sf $(realpath ../../src/universal/git/.gitconfig) ~/.gitconfig
+
+# symlink rubocop config
+if [ ! -d ~/.config/rubocop ]
+then
+  mkdir -p ~/.config/rubocop
+fi
+
+ln -sf $(realpath ../../src/universal/neovim/syntax/ruby/.rubocop.yml) ~/.config/rubocop/config.yml
