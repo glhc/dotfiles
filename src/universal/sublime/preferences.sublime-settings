@@ -1,0 +1,17 @@
+{
+	"auto_match_enabled": false,
+	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).sublime-color-scheme",
+	"command": "prev_view",
+	"font_size": 14,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"keys": "ctrl+shift+tab",
+	"scroll_past_end": false,
+	"scroll_speed": 1.5,
+	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme"
+}
+

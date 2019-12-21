@@ -1,0 +1,11 @@
+[
+    { "keys": ["alt+right"], "command": "scroll_width", "args": {"amount": 130 } },
+    { "keys": ["alt+left"], "command": "scroll_width", "args": {"amount": -130 } },
+    { "keys": ["ctrl+pagedown"], "command": "next_view_in_stack" },
+	{ "keys": ["ctrl+pageup"], "command": "prev_view_in_stack" },
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+	{ "keys": ["ctrl+t"], "command": "new_file" },
+	{ "keys": ["ctrl+n"], "command": "transpose" },
+	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_folder" },
+]
