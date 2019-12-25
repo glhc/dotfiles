@@ -44,6 +44,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'metakirby5/codi.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Plug 'pangloss/vim-javascript'
+  Plug 'rust-lang/rust.vim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
