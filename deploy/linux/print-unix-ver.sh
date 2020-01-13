@@ -34,3 +34,14 @@ fi
 echo OS: $OS
 echo VER: $VER
 
+
+
+
+# Useful Snippets
+# 
+# should find the distro
+# awk '/DISTRIB_ID/' /etc/lsb-release |tr -d 'DISTRIB_ID='
+#
+#
+#
+#
