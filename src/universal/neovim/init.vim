@@ -123,6 +123,9 @@ set relativenumber
 " Make diagnostic gutter consistent with theme color instead of default grey.
 highlight clear SignColumn
 
+" Hide tildes (~) that are displayed on lines after EOF
+" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+
 " ### vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
@@ -161,7 +164,7 @@ set nobackup
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+" set cmdheight=1
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=250
