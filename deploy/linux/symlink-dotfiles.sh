@@ -2,9 +2,15 @@
 
 ######## Building section for symlinks
 
+# alacritty config symlink
+if [ ! -d ~/.config/alacritty ]
+then
+  mkdir -p ~/.config/alacritty
+fi
+ln -sf $(realpath ../../src/linux/alacritty/alacritty.yml) ~/.config/alacritty/alacritty.yml
+
 # tmux config symlink
 ln -sf $(realpath ../../src/linux/tmux/.tmux.conf) ~/.tmux.conf
-
 
 # .bashrc symlink
 ln -sf $(realpath ../../src/linux/bash/.bashrc) ~/.bashrc
@@ -15,13 +21,12 @@ ln -sf $(realpath ../../src/linux/bash/.bash_profile) ~/.bash_profile
 # .inputrc symlink
 ln -sf $(realpath ../../src/linux/bash/.inputrc) ~/.inputrc
 
-# Set up push to ~/.config/neovim
+# Neovim config symlink
 if [ ! -d ~/.config/nvim ]
 then
   mkdir -p ~/.config/nvim
 fi
 
-# Neovim config symlink
 ln -sf $(realpath ../../src/universal/neovim/init.vim) ~/.config/nvim/init.vim
 
 # coc-settings.json symlink
