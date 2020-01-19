@@ -22,18 +22,11 @@ if which tmux >/dev/null 2>&1; then
     done
 fi
 
-# If ~/.config doesn't exist, make it
-# if [ -d ~/.config/theme/dircolors-solarized ]
-# then
-#   eval `~/.config/theme/dircolors-solarized/dircolors.ansi-dark`
-# fi
-  
-
 # if dircolors exists, use them
-if [ -f ~/.dir_colors ]
-then
-  eval `dircolors ~/.dir_colors`
-fi
+# if [ -f ~/.dir_colors ]
+# then
+eval `dircolors ~/.dir_colors`
+# fi
 
 # If rbenv is installed
 if [ -d ~/.rbenv ]

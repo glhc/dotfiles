@@ -4,9 +4,9 @@
 set encoding=UTF-8
 
 " Enable truecolor in nvim
-if has("termguicolors")
+" if has("termguicolors")
   set termguicolors
-endif
+" endif
 
 " let g:solarized_termcolors=16
 
