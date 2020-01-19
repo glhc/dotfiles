@@ -45,3 +45,11 @@ then
 fi
 
 ln -sf $(realpath ../../src/universal/neovim/syntax/ruby/.rubocop.yml) ~/.config/rubocop/config.yml
+
+
+# symlink i3 config
+if [ ! -d ~/.config/i3 ]
+then
+  mkdir -p ~/.config/i3
+fi
+ln -sf $(realpath ../../src/linux/i3/config) ~/.config/i3/config

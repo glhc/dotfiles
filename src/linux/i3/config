@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -164,12 +164,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
-
 # Starts flashfocus and binds flash current window.
 exec_always --no-startup-id flashfocus
 
@@ -196,3 +190,115 @@ exec --no-startup-id hsetroot -solid "#d33682"
 
 # hide edge borders
 hide_edge_borders both
+
+
+##### i3-gaps settings
+
+gaps inner 14
+gaps outer -2
+
+# Smart gaps (gaps used if onlly more than one container on the workspace)
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+
+# color palette used for the terminal ( ~/.xresources file )
+# colors are gathered based on the documentation:
+# https://i3wm.org/docs/userguide.html#xresources
+# change the variable name at the place you want to match the color
+# of your terminal like this:
+# [example]
+# if you want your bar to have the same background color as your 
+# terminal background change the line 362 from:
+# background #14191d
+# to:
+# background $term_background
+# same logic applied to everything else.
+set_from_resource $term_background background
+set_from_resource $term_foreground foreground
+set_from_resource $term_color0     color0
+set_from_resource $term_color1     color1
+set_from_resource $term_color2     color2
+set_from_resource $term_color3     color3
+set_from_resource $term_color4     color4
+set_from_resource $term_color5     color5
+set_from_resource $term_color6     color6
+set_from_resource $term_color7     color7
+set_from_resource $term_color8     color8
+set_from_resource $term_color9     color9
+set_from_resource $term_color10    color10
+set_from_resource $term_color11    color11
+set_from_resource $term_color12    color12
+set_from_resource $term_color13    color13
+set_from_resource $term_color14    color14
+set_from_resource $term_color15    color15
+
+
+bar {
+	i3bar_command i3bar
+	status_command i3status
+	position bottom
+
+## please set your primary output first. example: 'xrandr --output edp1 --primary'
+#	tray_output primary
+#	tray_output edp1
+
+	bindsym button4 nop
+	bindsym button5 nop
+#   font xft:urwgothic-book 11
+	strip_workspace_numbers yes
+
+    colors {
+        background $term_background
+        statusline #f9faf9
+        separator  #454947
+
+#                      border  backgr. text
+        focused_workspace  #f9faf9 #16a085 #292f34
+        active_workspace   #595b5b #353836 #fdf6e3
+        inactive_workspace #595b5b #222d31 #eee8d5
+        binding_mode       #16a085 #2c2c2c #f9faf9
+        urgent_workspace   #16a085 #fdf6e3 #e5201d
+    }
+}
+
+ 
+# set shut down, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "enter" or "escape"
+    bindsym return mode "default"
+    bindsym escape mode "default"
+}
+
+
+# Lock screen
+bindsym $mod+9 exec --no-startup-id betterlockscreen
+
+# Autostart applications
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id manjaro-hello
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+# exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_green
+exec --no-startup-id xautolock -time 10 -locker betterlockscreen
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
