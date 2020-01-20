@@ -19,6 +19,8 @@ This uses a lot of software. Here are some of the used software:
 
 - X11
 - i3wm (preferably i3-gaps)
+  - [compton]_(https://github.com/chjj/compton_)
+  - [flashfocus](https://github.com/fennerm/flashfocus)
 
 ### Terminal
   

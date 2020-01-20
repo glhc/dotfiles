@@ -53,3 +53,6 @@ then
   mkdir -p ~/.config/i3
 fi
 ln -sf $(realpath ../../src/linux/i3/config) ~/.config/i3/config
+
+# compton.conf
+ln -sf $(realpath ../../src/linux/compton/.compton.conf) ~/.config/compton.conf
