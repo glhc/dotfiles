@@ -1,4 +1,6 @@
 " # Vim Configuration File
+" TODO: Structure this file.
+"   - Add a Plugins top-level heading
 
 :scriptencoding utf-8
 set encoding=UTF-8
@@ -43,7 +45,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'metakirby5/codi.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " Plug 'pangloss/vim-javascript'
+  Plug 'pangloss/vim-javascript'
+  Plug 'pprovost/vim-ps1'
   Plug 'rust-lang/rust.vim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
@@ -334,6 +337,21 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd FileType erb let b:surround_{char2nr('=')} = "<%= \r %>"
 autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
 
+" vim-javascript
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "⇚"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
+" let g:javascript_conceal_arrow_function       = "⇒"
+" let g:javascript_conceal_noarg_arrow_function = "🞅"
+" let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+
 " Ideas:
 " Ctrl + Shift + M - Go to CocList Diagnostics
 " (Optional): Ctrl + Tab and Ctrl + Shift + Tab for switching buffers
@@ -341,3 +359,6 @@ autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
 "change popup menu highlighting to work better (highlight group 'PMenu')
 "e.g.
 "highlight Pmenu
+"
+"
+"
