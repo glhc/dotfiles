@@ -4,9 +4,11 @@ This uses a lot of software. Here are some of the used software:
 
 
 
-## Applications
+## Linux
 
-### Spotify
+### Applications
+
+#### Spotify
 
 - [Spotifyd](https://github.com/Spotifyd/spotifyd)
   - Spotify service
@@ -15,12 +17,16 @@ This uses a lot of software. Here are some of the used software:
 - [playerctl](https://github.com/altdesktop/playerctl)
   - Wires up the play/pause/volume keys
 
-## Windows Manager:
+### Windows Manager:
 
 - X11
 - i3wm (preferably i3-gaps)
   - [compton]_(https://github.com/chjj/compton_)
   - [flashfocus](https://github.com/fennerm/flashfocus)
+- ddcutil
+  - Utility for reading and changing monitor settings
+
+## Universal
 
 ### Terminal
   
@@ -28,6 +34,15 @@ This uses a lot of software. Here are some of the used software:
   - Good terminal emulator
 - [tmux](https://github.com/tmux/tmux)
   - Terminal multiplexor
+
+#### Neovim
+
+> Remember to run: :checkhealth to look at dependencies
+
+- neovim
+- vim-plug
+- coc.nvim
+- [neovim ruby support](https://github.com/neovim/neovim-ruby)
 
 #### Colors
 
@@ -38,10 +53,41 @@ This uses a lot of software. Here are some of the used software:
 - Consolas
 - NerdFont Patcher
 
+### Development
+
+#### Ruby
+
+- rbenv
+- gem
+
+##### Gems
+
+- [neovim](https://github.com/neovim/neovim-ruby)
+- YARD
+- solargraph
+- pry
+
+#### Javascript
+
+- n
+- Node.js
+- npm
+- yarn
+
+##### Modules
+
+- [neovim](https://github.com/neovim/node-client/)
+ 
+
+#### Python
+
+- Python
+- [pynvim](https://github.com/neovim/pynvim)
+- pip
 
 
 
-## Future plans
+### Future plans
 
 - Wayland
 - Sway
