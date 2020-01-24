@@ -39,6 +39,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'chemzqm/vim-jsx-improve'
   Plug 'lifepillar/vim-solarized8'
   Plug 'altercation/vim-colors-solarized'
+  Plug 'romainl/flattened'
+  Plug 'icymind/neosolarized'
+  Plug 'w0ng/vim-hybrid'
   Plug 'honza/vim-snippets'
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
