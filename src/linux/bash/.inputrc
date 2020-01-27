@@ -29,6 +29,9 @@ set bell-style visible
 set page-completions on
 set print-completions-horizontally on
 
+# Match files whose name begins with a '.'
+set match-hidden-files on
+
 #### Keybindings ####
 
 "\C-h": backward-kill-word
