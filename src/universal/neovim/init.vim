@@ -63,6 +63,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
+  Plug 'wellle/context.vim'
   Plug 'yggdroot/indentline'
 
   
@@ -74,7 +75,7 @@ call plug#end()
 " let g:indentLine_setConceal = 0
 
 " Override conceal colour set to grey.
-" let g:indentLine_setColors = 0
+let g:indentLine_setColors = 0
 
 " Change indent character to a better one.
 " Left one eigth block is not supported by consolas, stored here for future
@@ -336,6 +337,13 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 :inoremap kj <Esc>
 :inoremap JK <Esc>
 :inoremap KJ <Esc>
+
+" Search
+" Bind <ESC><ESC> to clear search-based highlighting
+nnoremap <ESC><ESC> :let @/ = ""<CR>
+" Make search case-insensitive
+set ignorecase
+
 
 " Include .erb support for vim-surround
 autocmd FileType erb let b:surround_{char2nr('=')} = "<%= \r %>"

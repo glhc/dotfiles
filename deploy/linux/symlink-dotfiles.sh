@@ -7,7 +7,7 @@ if [ ! -d ~/.config/alacritty ]
 then
   mkdir -p ~/.config/alacritty
 fi
-ln -sf $(realpath ../../src/linux/alacritty/alacritty.yml) ~/.config/alacritty/alacritty.yml
+ln -sf $(realpath ../../src/universal/alacritty/alacritty.yml) ~/.config/alacritty/alacritty.yml
 
 # tmux config symlink
 ln -sf $(realpath ../../src/linux/tmux/.tmux.conf) ~/.tmux.conf
