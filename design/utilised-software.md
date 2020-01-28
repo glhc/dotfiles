@@ -25,6 +25,8 @@ This uses a lot of software. Here are some of the used software:
   - [flashfocus](https://github.com/fennerm/flashfocus)
 - ddcutil
   - Utility for reading and changing monitor settings
+- Nitrogen
+  - Wallpaper setter
 
 ## Universal
 

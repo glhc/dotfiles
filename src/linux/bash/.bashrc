@@ -29,7 +29,7 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 # and so on
 
 # Custom grep color
-export GREP_COLOR="35m"
+export GREP_COLOR="35"
 
 # Customise bash prompt
 export PS1="\u:\w \\$ \[$(tput sgr0)\]"
