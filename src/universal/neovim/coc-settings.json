@@ -38,8 +38,7 @@
   "solargraph.formatting": true,
   "solargraph.references": true,
   "solargraph.diagnostics": true,
-  "coc.source.coc-tsserver.priority": 110,
-  "snippets.priority": 90,
+  "snippets.priority": 250,
   "snippets.shortcut": "→",  
   "tabnine.priority": 10
 }
