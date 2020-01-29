@@ -54,7 +54,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'rust-lang/rust.vim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
-  Plug 'SirVer/ultisnips'
+  " Plug 'SirVer/ultisnips'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-dadbod'
