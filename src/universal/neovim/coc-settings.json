@@ -38,8 +38,6 @@
   "solargraph.formatting": true,
   "solargraph.references": true,
   "solargraph.diagnostics": true,
-  "tabnine.priority": 250,
-  "git.addedSign.text": "\uf457",
-  "git.changedSign.text": "\uf459",
-  "git.removedSign.text": "\uf458"
+  "coc.source.coc-tsserver.priority": 110,
+  "tabnine.priority": 10
 }

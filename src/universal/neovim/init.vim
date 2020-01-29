@@ -64,7 +64,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
-  Plug 'wellle/context.vim'
   Plug 'yggdroot/indentline'
 
   
