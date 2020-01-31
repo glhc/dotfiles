@@ -57,6 +57,8 @@ This uses a lot of software. Here are some of the used software:
 
 ### Development
 
+- [direnv](https://direnv.net/)
+
 #### Ruby
 
 - rbenv
