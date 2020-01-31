@@ -4,6 +4,7 @@
 # Aliases
 alias ls="ls -lhA --color"
 alias grep='grep --color=auto'
+alias dcr='docker-compose run'
 
 
 # Colourise manpages
@@ -70,3 +71,5 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+eval "$(direnv hook bash)"
