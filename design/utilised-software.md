@@ -28,6 +28,10 @@ This uses a lot of software. Here are some of the used software:
 - Nitrogen
   - Wallpaper setter
 
+### Remote Control
+
+- TigerVNC
+
 ## Universal
 
 ### Terminal

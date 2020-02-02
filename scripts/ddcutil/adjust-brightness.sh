@@ -8,7 +8,7 @@ DISPLAYS=`sudo ddcutil detect -t \
 
 # iterate over each display
 for DISPLAY in $DISPLAYS; do
-  sudo ddcutil -d $DISPLAY setvcp 10 $1
+  sudo ddcutil -d $DISPLAY setvcp 10 "$1"
 done
 
 
