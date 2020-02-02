@@ -1,5 +1,10 @@
-echo 'The current brightness of display 1:'
-sudo ddcutil -d 1 getvcp 10 -t |awk '{print $4}'
+DISPLAYS=`sudo ddcutil detect -t \
+  |grep -i display |awk '{print $2}' \
+  |paste -sd " "`
 
-echo 'The max brightness of display 1:'
-sudo ddcutil -d 1 getvcp 10 -t |awk '{print $5}'
+for DISPLAY in $DISPLAYS; do
+
+  BRIGHTNESS=`sudo ddcutil -d $DISPLAY getvcp 10 -t |awk '{print $4}'`
+  echo "The current brightness of Display $(echo $DISPLAY): $(echo $BRIGHTNESS)"
+
+done

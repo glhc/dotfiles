@@ -46,7 +46,6 @@ fi
 
 ln -sf $(realpath ../../src/universal/neovim/syntax/ruby/.rubocop.yml) ~/.config/rubocop/config.yml
 
-
 # symlink i3 config
 if [ ! -d ~/.config/i3 ]
 then
@@ -56,3 +55,11 @@ ln -sf $(realpath ../../src/linux/i3/config) ~/.config/i3/config
 
 # compton.conf
 ln -sf $(realpath ../../src/linux/compton/.compton.conf) ~/.config/compton.conf
+
+# symlink scripts
+if [ ! -d ~/code ]
+then
+  mkdir -p ~/code
+fi
+
+ln -s $(realpath ../../scripts/) ~/code/scripts
