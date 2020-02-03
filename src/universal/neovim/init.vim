@@ -142,10 +142,10 @@ let g:javascript_plugin_jsdoc = 1
 
 " ## CoC extensions
 call coc#add_extension(
+      \ 'coc-eslint',
       \ 'coc-tsserver',
       \ 'coc-tabnine',
       \ 'coc-highlight',
-      \ 'coc-eslint',
       \ 'coc-prettier',
       \ 'coc-solargraph',
       \ 'coc-lists',
@@ -163,6 +163,8 @@ call coc#add_extension(
 " Taking out because of performance issues
       " \ 'coc-git',
       " \ 'coc-sql',
+
+" Taken out for diagnostic fail reasons
 
 " if hidden is not set, TextEdit might fail.
 " Allow for switching buffers
@@ -360,7 +362,7 @@ autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
 " let g:javascript_conceal_prototype            = "¶"
 " let g:javascript_conceal_static               = "•"
 " let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_arrow_function         = "⇒ "
 " let g:javascript_conceal_noarg_arrow_function = "🞅"
 " let g:javascript_conceal_underscore_arrow_function = "🞅"
 
