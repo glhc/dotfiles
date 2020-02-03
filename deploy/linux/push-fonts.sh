@@ -6,7 +6,7 @@ then
 fi
 
 cp -r ../../src/universal/fonts/patched-fonts/. ~/.local/share/fonts
-cp -r ../../src/universal/fonts/unpactched-fonts/. ~/.local/share/fonts
+cp -r ../../src/universal/fonts/unpatched-fonts/. ~/.local/share/fonts
 
 # Update the font cache
 fc-cache
