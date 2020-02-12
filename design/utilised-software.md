@@ -16,6 +16,8 @@ This uses a lot of software. Here are some of the used software:
   - Spotify terminal client
 - [playerctl](https://github.com/altdesktop/playerctl)
   - Wires up the play/pause/volume keys
+- ranger
+  - A terminal file explorer with preview capabilities
 
 ### Windows Manager:
 
