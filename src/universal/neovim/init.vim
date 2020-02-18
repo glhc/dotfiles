@@ -35,23 +35,22 @@ endif
 " Install plugins with vim-plug
 call plug#begin('~/.vim/plugged')
 
-  Plug 'andys8/vscode-jest-snippets'
-  " Plug 'chemzqm/vim-jsx-improve'
-  Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'lifepillar/vim-solarized8'
   Plug 'altercation/vim-colors-solarized'
-  Plug 'romainl/flattened'
-  Plug 'icymind/neosolarized'
-  Plug 'w0ng/vim-hybrid'
+  Plug 'andys8/vscode-jest-snippets'
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'honza/vim-snippets'
+  Plug 'icymind/neosolarized'
   Plug 'itchyny/lightline.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  Plug 'lifepillar/vim-solarized8'
+  Plug 'maxmellon/vim-jsx-pretty'
   Plug 'metakirby5/codi.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'pangloss/vim-javascript'
   Plug 'pprovost/vim-ps1'
+  Plug 'romainl/flattened'
   Plug 'rust-lang/rust.vim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'scrooloose/nerdtree'
@@ -62,9 +61,11 @@ call plug#begin('~/.vim/plugged')
   " Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
+  Plug 'tpop/vim-obsession'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
+  Plug 'w0ng/vim-hybrid'
   Plug 'yggdroot/indentline'
 
   
@@ -333,7 +334,15 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 " ### NERDtree Config End ###
 
+" ### tmux-vim-navigator ###
 
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
+nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " Bind jk and kj to entering normal mode
 :inoremap jk <Esc>

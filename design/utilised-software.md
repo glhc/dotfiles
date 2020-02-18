@@ -39,9 +39,9 @@ This uses a lot of software. Here are some of the used software:
 ### Terminal
   
 - [Alacritty](https://github.com/alacritty/alacritty)
-  - Good terminal emulator
 - [tmux](https://github.com/tmux/tmux)
-  - Terminal multiplexor
+  - [TPM](https://github.com/tmux-plugins/tpm)
+- [fpp](http://facebook.github.io/PathPicker/)
 
 #### Neovim
 
