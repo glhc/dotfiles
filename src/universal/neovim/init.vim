@@ -19,6 +19,8 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 set tabstop=8
+set conceallevel=2
+set concealcursor=nc
 
 " ## Plugins
 
@@ -61,12 +63,13 @@ call plug#begin('~/.vim/plugged')
   " Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-markdown'
-  Plug 'tpop/vim-obsession'
+  Plug 'tpope/vim-obsession'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'w0ng/vim-hybrid'
-  Plug 'yggdroot/indentline'
+  " Disable because of conceal overloading with symbol stuff
+  " Plug 'yggdroot/indentline'
 
   
 call plug#end()
@@ -371,7 +374,7 @@ autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
 " let g:javascript_conceal_prototype            = "¶"
 " let g:javascript_conceal_static               = "•"
 " let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function         = "⇒ "
+let g:javascript_conceal_arrow_function         = " "
 " let g:javascript_conceal_noarg_arrow_function = "🞅"
 " let g:javascript_conceal_underscore_arrow_function = "🞅"
 
@@ -383,6 +386,3 @@ let g:javascript_conceal_arrow_function         = "⇒ "
 "change popup menu highlighting to work better (highlight group 'PMenu')
 "e.g.
 "highlight Pmenu
-"
-"
-"

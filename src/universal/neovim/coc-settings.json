@@ -30,7 +30,7 @@
     },
   "diagnostic.errorSign": "",
   "diagnostic.infoSign": "",
-  "diagnostic.hintSign": "",
+  "diagnostic.hintSign": "",
   "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnType": true,
   "solargraph.completion": true,
