@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 ######## Building section for symlinks
 
@@ -62,4 +62,4 @@ then
   mkdir -p ~/code
 fi
 
-ln -s $(realpath ../../scripts/) ~/code/scripts
+ln -s $(realpath ../../scripts/) ~/scripts
