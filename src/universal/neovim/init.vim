@@ -7,9 +7,13 @@ set encoding=UTF-8
 
 " Enable truecolor in nvim
 " if has("termguicolors")
-  set termguicolors
+set termguicolors
 " endif
 
+" truecolor inside tmux
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"
 " let g:solarized_termcolors=16
 
 
@@ -377,7 +381,6 @@ autocmd FileType erb let b:surround_{char2nr('-%')} = "<% \r %>"
 let g:javascript_conceal_arrow_function         = " "
 " let g:javascript_conceal_noarg_arrow_function = "🞅"
 " let g:javascript_conceal_underscore_arrow_function = "🞅"
-
 
 " Ideas:
 " Ctrl + Shift + M - Go to CocList Diagnostics
