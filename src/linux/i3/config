@@ -133,7 +133,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Set boot layout
 workspace 1 output DisplayPort-0
 workspace 2 output DisplayPort-1
-workspace 3 output DisplayPort-3
+workspace 3 output DisplayPort-2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -292,3 +292,9 @@ exec_always --no-startup-id fix_xcursor
 
 # Disable mouse moving upon changing window focus
 mouse_warping none
+
+# Make Microsoft Teams notifications floating instead of tiling
+for_window [title="Microsoft Teams Notification"] floating enable
+
+bindsym $mod+Tab workspace next_on_output
+workspace_auto_back_and_forth yes
